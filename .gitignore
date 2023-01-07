@@ -1,4 +1,6 @@
 /.idea
 .DS_Store
-/client/node_modules/
-/server/vendor/
+/client/.idea
+/client/node_modules
+/server/.idea
+/server/vendor
