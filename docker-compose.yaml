@@ -1,0 +1,19 @@
+version: '3.9'
+services:
+  server:
+    build: ./server
+    command: go run .
+    volumes:
+      - ./server:/var/www/app
+    ports:
+      - "3001:3001"
+  client:
+    build: ./client
+    command: npm run dev
+    volumes:
+      - ./client:/var/www/app
+      # mount node_modules as a workaround for it disappearing
+      # after adding /client as a mounted folder
+      - /var/www/app/node_modules
+    ports:
+      - "80:3000"
